@@ -1,0 +1,3 @@
+FROM rabbitmq:3
+ENV HOSTNAME rabbitmq
+CMD ["rabbitmq-server"]

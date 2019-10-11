@@ -1,0 +1,21 @@
+version: '3'
+services:
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: DockerFile_Broker
+    container_name: rabbit_pv
+    expose:
+      - 5672
+    ports:
+      - 5672:5672
+  receiver:
+    build:
+      context: .
+      dockerfile: DockerFile_Receiver
+    container_name: receiver
+  sender:
+    build:
+      context: .
+      dockerfile: DockerFile_Sender
+    container_name: sender
